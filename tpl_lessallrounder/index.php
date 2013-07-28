@@ -3,7 +3,7 @@ defined('_JEXEC') or die('Access to this location is RESTRICTED.');
 echo '<?xml version="1.0" encoding="utf-8"?>';
 $app = JFactory::getApplication();
 $sitename = $app->getCfg('sitename');
-$textlogo = $this->params->get('textLogo') == 'sitename' ? htmlspecialchars($this->params->get('textLogo')) : $sitename;
+$textlogo = $this->params->get('whichtextLogo') == '1' ? htmlspecialchars($sitename) : htmlspecialchars($this->params->get('textLogo'));
 
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
