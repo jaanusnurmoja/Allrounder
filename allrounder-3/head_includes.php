@@ -22,9 +22,7 @@ else :
 		<link href="<?php echo $path; ?>/css/lvdropdown.css" rel="stylesheet" type="text/css" media="all" />
 	<?php else : ?>
 		<link href="<?php echo $path; ?>/css/template.css" rel="stylesheet" type="text/css" media="all" />
-	<!--
 		<link href="<?php echo $path; ?>/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-	-->
 		<link href="<?php echo $path; ?>/css/joomla.css" rel="stylesheet" type="text/css" media="all" />
 		<link href="<?php echo $path; ?>/css/colors.css" rel="stylesheet" type="text/css" media="all" />
 		<link href="<?php echo $path; ?>/css/lvdropdown.css" rel="stylesheet" type="text/css" media="all" />

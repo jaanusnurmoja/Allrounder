@@ -1,16 +1,5 @@
 //
 // Variables
-// Copied from /media/jui/less/variables.less
-// Changed variables as they're set in template params:
-//   @linkColor
-//   @baseFontSize		(@fontSize)
-//   @baseLineHeight	(@lineHeight)
-//   @bodyBackground	(@bodyBgColor)
-//   @textColor			(@fontColor)
-//
-// Adjusted values
-//   @sansFontFamily
-//
 // --------------------------------------------------
 
 
@@ -43,25 +32,29 @@
 
 // Scaffolding
 // -------------------------
-@bodyBackground:        @bodyBgColor; // Taken from template parameters (orig: @white)
-@textColor:             @fontColor; // Taken from template parameters (orig: @grayDark)
+@bodyBackground:        @white;
+@textColor:             @grayDark;
 
 
 // Links
 // -------------------------
-// @linkColor:             #08c;
+@linkColor:             #08c;
 @linkColorHover:        darken(@linkColor, 15%);
 
 
 // Typography
 // -------------------------
-@sansFontFamily:        Verdana, "Helvetica Neue", Helvetica, Arial, sans-serif;
+@sansFontFamily:        "Helvetica Neue", Helvetica, Arial, sans-serif;
 @serifFontFamily:       Georgia, "Times New Roman", Times, serif;
 @monoFontFamily:        Monaco, Menlo, Consolas, "Courier New", monospace;
 
-@baseFontSize:          @fontSize; // Taken from template parameters (orig: 14px)
-@baseFontFamily:        @sansFontFamily; // Todo: Take from template parameters (guarded!)
-@baseLineHeight:        @lineHeight; // Taken from template parameters (orig: 20px)
+/* >>> JUI >>> */
+@baseFontSize:          13px;
+/* <<< JUI <<< */
+@baseFontFamily:        @sansFontFamily;
+/* >>> JUI >>> */
+@baseLineHeight:        18px;
+/* <<< JUI <<< */
 @altFontFamily:         @serifFontFamily;
 
 @headingsFontFamily:    inherit; // empty to use BS default, @baseFontFamily
@@ -262,27 +255,28 @@
 @gridColumnWidth:         60px;
 @gridGutterWidth:         20px;
 @gridRowWidth:            (@gridColumns * @gridColumnWidth) + (@gridGutterWidth * (@gridColumns - 1));
-
+/* >>> JUI >>> */
 // 1200px min
-@gridColumnWidth1200:     70px;
-@gridGutterWidth1200:     30px;
-@gridRowWidth1200:        (@gridColumns * @gridColumnWidth1200) + (@gridGutterWidth1200 * (@gridColumns - 1));
+@gridColumnWidth1200:     60px;
+@gridGutterWidth1200:     20px;
+@gridRowWidth1200:        (@gridColumns * @gridColumnWidth) + (@gridGutterWidth * (@gridColumns - 1));
 
 // 768px-979px
 @gridColumnWidth768:      42px;
 @gridGutterWidth768:      20px;
-@gridRowWidth768:         (@gridColumns * @gridColumnWidth768) + (@gridGutterWidth768 * (@gridColumns - 1));
+@gridRowWidth768:         (@gridColumns * @gridColumnWidth) + (@gridGutterWidth * (@gridColumns - 1));
 
 
 // Fluid grid
 // -------------------------
-@fluidGridColumnWidth:    percentage(@gridColumnWidth/@gridRowWidth);
-@fluidGridGutterWidth:    percentage(@gridGutterWidth/@gridRowWidth);
+@fluidGridColumnWidth:    6.382978723%;
+@fluidGridGutterWidth:    2.127659574%;
 
 // 1200px min
-@fluidGridColumnWidth1200:     percentage(@gridColumnWidth1200/@gridRowWidth1200);
-@fluidGridGutterWidth1200:     percentage(@gridGutterWidth1200/@gridRowWidth1200);
+@fluidGridColumnWidth1200:     6.382978723%;
+@fluidGridGutterWidth1200:     2.127659574%;
 
 // 768px-979px
-@fluidGridColumnWidth768:      percentage(@gridColumnWidth768/@gridRowWidth768);
-@fluidGridGutterWidth768:      percentage(@gridGutterWidth768/@gridRowWidth768);
+@fluidGridColumnWidth768:      6.382978723%;
+@fluidGridGutterWidth768:      2.127659574%;
+/* <<< JUI <<< */

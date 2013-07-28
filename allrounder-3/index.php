@@ -1,6 +1,10 @@
 <?php
 defined('_JEXEC') or die('Access to this location is RESTRICTED.');
 echo '<?xml version="1.0" encoding="utf-8"?>';
+$app = JFactory::getApplication();
+$sitename = $app->getCfg('sitename');
+$textlogo = $this->params->get('textLogo') == 'sitename' ? htmlspecialchars($this->params->get('textLogo')) : $sitename;
+
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $this->language; ?>" lang="<?php echo $this->language; ?>" >
@@ -36,11 +40,11 @@ echo '<?xml version="1.0" encoding="utf-8"?>';
 							<a class="medialogo" href="index.php"><img alt="Logo" src="<?php echo $this->baseurl ?>/<?php echo htmlspecialchars($this->params->get('mediaLogo')); ?>"/></a>
 						<?php endif;?>
 						<?php if ($this->params->get('showtextLogo')) :
-							$style	= ($this->params->get('useLESS')) ? '' : 'style="color :#'.htmlspecialchars($this->params->get('logoColor')).';" ' ?>
-							<a <?php echo $style; ?>class="logo" href="index.php"><?php echo htmlspecialchars($this->params->get('textLogo')); ?></a>
+							$style	= ($this->params->get('useLESS')) ? '' : 'style="color :'.htmlspecialchars($this->params->get('logoColor')).';" ' ?>
+							<a <?php echo $style; ?>class="logo" href="index.php"><?php echo $textlogo; ?></a>
 						<?php endif;?>
 						<?php if ($this->params->get('showSlogan')) :
-							$style	= ($this->params->get('useLESS')) ? '' : 'style="color :#'.htmlspecialchars($this->params->get('sloganColor')).';" ' ?>
+							$style	= ($this->params->get('useLESS')) ? '' : 'style="color :'.htmlspecialchars($this->params->get('sloganColor')).';" ' ?>
 							<div <?php echo $style; ?>class="slogan"><?php echo htmlspecialchars($this->params->get('slogan')); ?></div>
 						<?php endif;?>
 					</div>

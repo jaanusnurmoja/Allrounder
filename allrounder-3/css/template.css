@@ -77,9 +77,10 @@ a.imglogo:hover {
 a.medialogo {
 	line-height: normal;
 	font-size:36px;
-	display:block;
+	/*display:block;*/
+	float:left;
 	margin:0;
-	padding:0;
+	padding:20px 20px 0 0;
 }
 a.medialogo:hover {
 	text-decoration:none;
@@ -91,13 +92,13 @@ a.medialogo:hover {
 	display:block;
 	margin:0;
 	letter-spacing:-1px;
-	padding: 20px 40px 10px 60px;
+	padding: 10px 0 0 0;
 }
 a.logo:hover {
 	text-decoration:none;
 }
 div.slogan {
-	line-height: normal;
+	/*line-height: normal;*/
 	font-size:18px;
 	display:block;
 	margin:0;
