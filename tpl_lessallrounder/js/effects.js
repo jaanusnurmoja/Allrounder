@@ -1,93 +1,99 @@
-jQuery(document).ready(function($) {
-	// Mainmenu with suffix _menu
-	$('.module_menu ul.menu li a').hover(function(){
-		$(this).stop().animate({'padding-left':'20px'},{
+jQuery(document).ready(function(jq) {
+
+	// Mainmenu with suffix _menu	
+	jq('.module_menu ul.menu li a').hover(function(){
+		jq(this).stop().animate({'padding-left':'20px'},{
 			queue:false,
 			duration:'fast'
 		});
 	}, function(){
-		$(this).stop().animate({'padding-left':'0'},{
+		jq(this).stop().animate({'padding-left':'0'},{
 			queue:false,
 			duration:'middle'
 		});
 	});
 
+
 	// Searchbox animation
-	$("#search").hide().show({},"swing"); 
+	jq("#search").hide().show({},"swing"); 
+
 
 	// Go to top link
-	$('a#gotop').click(function(){
-	$('html, body').animate({scrollTop:0}, 1200); 
+	jq('a#gotop').click(function(){
+	jq('html, body').animate({scrollTop:0}, 1200); 
 		return false; 
 	});
 
+
 	// Tooltips
-	$('.lv-tooltip').tooltip({separator:'::',delay:200});
-	$('.lv-tooltip-white').tooltip({className:'tip-white',separator:'::',delay:200});
-	$('.lv-tooltip-black').tooltip({className:'tip-black',separator:'::',delay:200});
-	$('.lv-tooltip-blue').tooltip({className:'tip-blue',separator:'::',delay:200});
-	$('.lv-tooltip-red').tooltip({className:'tip-red',separator:'::',delay:200});
-	$('.lv-tooltip-green').tooltip({className:'tip-green',separator:'::',delay:200});
-	$('.lv-tooltip-yellow').tooltip({className:'tip-yellow',separator:'::',delay:200});
-
+	jq('.lv-tooltip').tooltip({separator:'::',delay:200});
+	jq('.lv-tooltip-white').tooltip({className:'tip-white',separator:'::',delay:200});
+	jq('.lv-tooltip-black').tooltip({className:'tip-black',separator:'::',delay:200});
+	jq('.lv-tooltip-blue').tooltip({className:'tip-blue',separator:'::',delay:200});
+	jq('.lv-tooltip-red').tooltip({className:'tip-red',separator:'::',delay:200});
+	jq('.lv-tooltip-green').tooltip({className:'tip-green',separator:'::',delay:200});
+	jq('.lv-tooltip-yellow').tooltip({className:'tip-yellow',separator:'::',delay:200});
+	
 	// Captions
-	$('.lv-caption').caption({opacity:0.6,animation:'fade',separator: '::',button:true});
-	$('.lv-caption-fade').caption({opacity:0.6,fixed:false,animation:'fade',separator: '::'});
-	$('.lv-caption-slide').caption({opacity:0.6,fixed:false,animation:'slide',separator: '::'});
-	$('.lv-caption-bounce').caption({opacity:0.6,fixed:false,animation:'bounce',separator: '::'});
-	$('.lv-caption-gravity').caption({opacity:0.6,fixed:false,animation:'gravity',separator: '::'});
-	$('.lv-caption-zoom').caption({opacity:0.6,fixed:false,animation:'zoom',separator: '::'});
-	$('.lv-caption-racer').caption({opacity:0.6,fixed:false,animation:'racer',separator: '::'});
-	$('.lv-caption-move').caption({opacity:0.6,fixed:false,animation:'move',separator: '::'});
+	jq('.lv-caption').caption({opacity:0.6,animation:'fade',separator: '::',button:true});
+	jq('.lv-caption-fade').caption({opacity:0.6,fixed:false,animation:'fade',separator: '::'});
+	jq('.lv-caption-slide').caption({opacity:0.6,fixed:false,animation:'slide',separator: '::'});
+	jq('.lv-caption-bounce').caption({opacity:0.6,fixed:false,animation:'bounce',separator: '::'});
+	jq('.lv-caption-gravity').caption({opacity:0.6,fixed:false,animation:'gravity',separator: '::'});
+	jq('.lv-caption-zoom').caption({opacity:0.6,fixed:false,animation:'zoom',separator: '::'});
+	jq('.lv-caption-racer').caption({opacity:0.6,fixed:false,animation:'racer',separator: '::'});
+	jq('.lv-caption-move').caption({opacity:0.6,fixed:false,animation:'move',separator: '::'});
+	
 
-	// Article Details
-	$('.article-info dd').hide();
-	$('.article-info-term').click(function(){
-		$(this).stop();
-		$('.article-info dd').slideToggle("fast");
+
+	// Atricle Details
+//	jq('dl.article-info dd').hide();
+
+	jq('article-info-term').click(function(){
+		jq(this).stop();
+		jq('.article-info dd').slideToggle("fast");
 	});
 
+
 	// Accordion
-	$('.hideme').hide();
-	$('.lvacc').click( function() {
-		var trig = $(this);
+	jq('.hideme').hide();
+	jq('.lvacc').click( function() {
+		var trig = jq(this);
 		if ( trig.hasClass('lvacc_active') ) {
 			trig.next('.hideme').slideToggle('slow');
 			trig.removeClass('lvacc_active');
 		} else {
-			$('.lvacc_active').next('.hideme').slideToggle('slow');
-			$('.lvacc_active').removeClass('lvacc_active');
+			jq('.lvacc_active').next('.hideme').slideToggle('slow');
+			jq('.lvacc_active').removeClass('lvacc_active');
 			trig.next('.hideme').slideToggle('slow');
 			trig.addClass('lvacc_active');
 		};
 	return false;
 	});
-	$('.lvacc-all').click(function(){
-		$('.hideme').stop().toggle();
+	jq('.lvacc-all').click(function(){
+		jq('.hideme').stop().toggle();
+	
 	});
-
+	
 	// Toppanel
-//	$('#toppanel').hide();
-	$('a#toppanel-toggle').click(function(){
-		$('#toppanel').slideToggle("middle");
+//	jq('#toppanel').hide();
+	jq('a#toppanel-toggle').click(function(){
+		jq('#toppanel').slideToggle("middle");
 		return true;
 	});
 
+
 	// Sidepanel
-//	$('#sidepanel').hide();
-	$('a#sidepanel-toggle').click(function(){
-		$('#sidepanel').toggle("middle");
+//	jq('#sidepanel').hide();
+	jq('a#sidepanel-toggle').click(function(){
+		jq('#sidepanel').toggle("middle");
 		return false;
 	});
 
+
 	// System Messages
-	$("div#system-message div").fadeOut({
+	jq("div#system-message").fadeOut({
 		duration: 15000
 	});
 
-	// Destroy dropdown for actions
-	$('a.dropdown-toggle').remove();
-	$('ul.dropdown-menu').addClass('actions');
-	$('ul.dropdown-menu').removeClass('dropdown-menu');
-	$('ul.actions li a span').parent().parent().addClass('hide-text');
 });

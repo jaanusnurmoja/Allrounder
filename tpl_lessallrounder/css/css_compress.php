@@ -1,8 +1,7 @@
 <?php
+// CSS-Compress - by LernVid.com
 
-// JS-Compress - by LernVid.com
-
-  header('Content-Type: text/javascript');
+  header('Content-Type: text/css');
 
   $expires = 60*60*24*7;
   header("Pragma: public");
@@ -10,14 +9,12 @@
   header('Expires: ' . gmdate('D, d M Y H:i:s', time()+$expires) . ' GMT');
 
   $files = array(
-    "jquery-1.9.1.min.js",
-    "jq-noconflict.js",
-    "lv-dropdown.js",
-    "jq.easy-tooltip.min.js",   
-    "jq.easy-caption.min.js",   
-    "reflection.js",
-    "effects.js"
-  );
+    "colors.css",
+    "template.css",
+    "joomla.css",
+    "typo.css",
+    "modules.css"
+ );
 
   $ETag = "";
 
